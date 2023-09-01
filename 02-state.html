@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->
+    <!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="css/02-state.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="css/globals.css" />
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/state.js"></script>
+
+    <style>
+    </style>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    
+    <input type="hidden" id="anPageName" name="page" value="02-state" />
+    <div class="container-center-horizontal">
+      <div class="x02-state screen">
+        <div class="date-and-time">
+          <div class="power" id="power_button" name="power_button" onclick="power_onoff()">
+            <img id="power" class="power-img" name="power" src="img/power2.svg" alt="Frame 12" />
+          </div>
+          <div class="machine-name">
+            <div class="frame-20"></div>
+          </div>
+          <a href="setup.html">
+            <div class="setup">
+              <a href="setup.html" onclick="window.event.stopPropagation()"
+                ><img class="icon-settings" src="img/vector-2.svg" alt="icon-settings" />
+              </a>
+            </div>
+          </a>
+          <div class="data_ora_giorno opensans-normal-white-16px">
+            <div id="clock" name="clock" class="align_self_stretch opensans-normal-white-16px"></div
+            ><div id="day" name="day" class="align_self_stretch opensans-normal-white-16px"></div
+            ><div id="date" name="date" class="align_self_stretch span1"></div>
+          </div>
+        </div>
+        <div class="frame-13" id="status_color"><div class="frame-13_prepurge_off" id="anima"></div>
+        <h1 class="title valign-text-middle" id="status_bar">LOADING...</h1></div>
+        <div class="cooling-fan_off" id="cooling-fan"> 
+          <div class="cooling_img"><img id="cooling_fan_img" name="cooling_fan_img" src="img/fan.svg" alt="Frame 12" /> </div>
+        </div>
+        <div class="curing_off" id="curing"></div>
+        <div class="overlap-group">
+          <div class="input_class" >
+            <input type="hidden" id="value_ssov" name="value_ssov" value="1">
+            <input type="hidden" id="value_sv1" name="value_sv1" value="1">
+            <input type="hidden" id="value_resistenze" name="value_resistenze" value="1">
+            <input type="hidden" id="value_anein" name="value_anein" value="1">
+            <input type="hidden" id="value_aneex" name="value_aneex" value="1">
+            <input type="hidden" id="value_door" name="value_door" value="1">
+            <input type="hidden" id="value_threshold" name="value_threshold" value="1">
+            <input type="hidden" id="value_power" name="value_power" value="1">            
+            <input type="hidden" id="value_setpoint" name="value_setpoint" value="0">
+            <input type="hidden" id="value_p1s1" name="value_p1s1" value="0">
+            <input type="hidden" id="value_p1s2" name="value_p1s2" value="0">
+            <input type="hidden" id="value_p1s3" name="value_p1s3" value="0">
+            <input type="hidden" id="value_p1s4" name="value_p1s4" value="0">
+            <input type="hidden" id="value_p2s1" name="value_p2s1" value="0">
+            <input type="hidden" id="value_p2s2" name="value_p2s2" value="0">
+            <input type="hidden" id="value_p2s3" name="value_p2s3" value="0">
+            <input type="hidden" id="value_p2s4" name="value_p2s4" value="0">
+            <input type="hidden" id="value_p3s1" name="value_p3s1" value="0">
+            <input type="hidden" id="value_p3s2" name="value_p3s2" value="0">
+            <input type="hidden" id="value_p3s3" name="value_p3s3" value="0">
+            <input type="hidden" id="value_p3s4" name="value_p3s4" value="0">
+            <input type="hidden" id="value_time" name="value_time" value="0">
+            <input type="hidden" id="value_temp" name="value_temp" value="1"> 
+            <input type="hidden" id="value_status_machine" name="value_status_machine" value="0"> 
+            <input type="hidden" id="value_slct_prog" name="value_slct_prog" value="1">
+            <input type="hidden" id="value_slider" name="value_slider" value="1">            
+            <input type="hidden" id="value_recycle" name="value_recycle" value="1">            
+            <input type="hidden" id="value_speed3" name="value_speed3" value="1">            
+            <div id="gun" name="gun" >
+              <img id="ssov_img" name="ssov_img" src="img/frame-ssov-off.svg" alt="Frame 12" />
+            </div>
+            <div class="input_spaceing" id="turbine" name="turbine">
+              <img id="sv1_img" name="sv1_img" src="img/frame-svi-off.svg" alt="Frame 12" />
+            </div>
+            <div class="input_spaceing" id="motor" name="motor">
+              <img id="resistenze_img" name="resistenze_img" src="img/frame-resis-off.svg" alt="Frame 12" />
+            </div>
+            <div class="input_spaceing" id="airin" name="airin">
+              <img id="anein_img" name="anein_img" src="img/frame-airin-off.svg" alt="Frame 12" />
+            </div>
+            <div class="input_spaceing" id="airex" name="airex">
+              <img id="aneex_img" name="aneex_img" src="img/frame-airex-off.svg" alt="Frame 12" />
+            </div>
+            <div class="input_spaceing" id="door" name="door">
+              <img id="door_img" name="door_img" src="img/frame-door-off.svg" alt="Frame 12" />
+            </div>
+          </div>
+          
+          
+        </div>
+        
+        <div class="startstop one">
+          <div class="time">
+              <div id="time-min" name="time-min" class="minutes number valign-text-middle text-1">17</div>
+              <h1 class="minsec number valign-text-middle text-1">  :</h1>
+              <div id="time-sec" name="time-sec" class="seconds number valign-text-middle text-1">00</div>
+            </div><div class="startbutton_dis" id="startbutton" name="startbutton" onclick="start_recipe()">
+            <p class="starttext ">START</p>
+          </div>
+
+          <div class="stopbutton" onclick="stop_recipe()">
+            <p class="stoptext ">STOP</p>
+          </div><img id="threshold_img" class="heater-img" name="threshold_img" src="img/frame-heater-off-1.svg" alt="Frame 12">
+        </div>
+
+        <div class="setpoints" >
+          
+          <p class="setpoint1 two valign-text-middle">PHASE 1</p>
+          <p class="setpoint2 two valign-text-middle">PHASE 2</p>
+          <p class="setpoint3 two valign-text-middle">PHASE 3</p>
+          <p class="setpoint4 valign-text-middle">PHASE 4</p>
+        </div>
+        
+<!------------------------------- P R O G R A M   1 -------------------------------------------->
+        <div class="fan" id="program1" name = "program1" >
+          <div class="fan_freez" id="fan_freez1" name="fan_freez1" >
+            <img class="minus_p1s1" id="minus_p1s1" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s2" id="minus_p1s2" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s3" id="minus_p1s3" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s4" id="minus_p1s4" src="img/rectangle-light.svg"/>
+          </div>
+          
+          <div class="progrms" >
+            <div class="progrms1-z1"  id="program1_z1" name="program1_z1">
+              <img class="vector-7"  src="img/vector-1.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" >PROG 1</div>
+            </div>
+
+            <div class="progrms1" onclick="slct_prog1()">
+              <img class="vector-7" id="prog1_svg" name="prog1_svg" src="img/vector-19.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" id="slct_prog1" name="slct_prog1">PROG 1</div>
+            </div>
+          </div>
+
+          <div class="prog1set1" >
+            <div class="parametersprog1set1">
+              <div class="dropdown" onmouseover="show_dropdown_p1s1()" onmouseout="hide_dropdown_p1s1()">
+                <img class="setup-44" id="img_p1s1" name="img_p1s1" src="img/setup-2.svg" alt="Setup" >
+                <div class="dropdown-content " id="dropdown-content_p1s1" name="dropdown-content_p1s1" >
+                  <p class="dropdown-text-low" onclick="hide_dropdown_p1s1() ; selectlow_p1s1()" >set1.low</p> 
+                  <p class="dropdown-text-high" onclick="hide_dropdown_p1s1() ; selecthigh_p1s1()">set2.med</p> 
+                  <p class="dropdown-text-max" onclick="hide_dropdown_p1s1() ; selectmax_p1s1()">set3.max</p>
+                </div>
+              </div>
+              <div class="modal" onmouseover="show_modal_p1s1()" onmouseout="hide_modal_p1s1()">
+                <div class="setminutes_p1  valign-text-middle" id="time_p1s1" name="time_p1s1" >0 MIN</div>
+                <div class="modal-content" id="modal-content_p1s1" name="modal-content_p1s1" >
+                  <div class="up_1" onclick="minutes_up_p1s1()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                  <div class="ok_minutes_div" onclick="hide_modal_p1s1() ; set_minutes_p1s1()" ><p class="ok_minutes" >ok</p> </div>
+                  <div class="down_1" onclick="minutes_down_p1s1()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="set_minutes" id="set_minutes_p1s1" name="set_minutes_p1s1" >1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prog1set2" >
+            <div class="parametersprog1set2">
+              <div class="dropdown" onmouseover="show_dropdown_p1s2()" onmouseout="hide_dropdown_p1s2()">
+                <img class="setup-44" id="img_p1s2" name="img_p1s2" src="img/setup-2.svg" alt="Setup">
+                <div class="dropdown-content"id="dropdown-content_p1s2" name="dropdown-content_p1s2">
+                  <p class="dropdown-text-low" onclick="hide_dropdown_p1s2() ; selectlow_p1s2()" >set1.low</p> 
+                  <p class="dropdown-text-high" onclick="hide_dropdown_p1s2() ; selecthigh_p1s2()">set2.med</p> 
+                  <p class="dropdown-text-max" onclick="hide_dropdown_p1s2() ; selectmax_p1s2()">set3.max</p>
+                </div>
+              </div>
+              <div class="modal" onmouseover="show_modal_p1s2()" onmouseout="hide_modal_p1s2()">
+                <p class="setminutes_p2 number valign-text-middle" id="time_p1s2" name="time_p1s2">0 MIN</p>
+                <div class="modal-content" id="modal-content_p1s2" name="modal-content_p1s2" >
+                  <div class="up_1" onclick="minutes_up_p1s2()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                  <div class="ok_minutes_div" onclick="hide_modal_p1s2() ; set_minutes_p1s2()" ><p class="ok_minutes" >ok</p> </div>
+                  <div class="down_1" onclick="minutes_down_p1s2()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="set_minutes" id="set_minutes_p1s2" name="set_minutes_p1s2" >1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prog1set3" >
+            <div class="parametersprog1set2"> 
+              <div class="dropdown"onmouseover="show_dropdown_p1s3()" onmouseout="hide_dropdown_p1s3()">
+                <img class="setup-44" id="img_p1s3" name="img_p1s3" src="img/setup-2.svg" alt="Setup">
+                <div class="dropdown-content" id="dropdown-content_p1s3" name="dropdown-content_p1s3">
+                  <p class="dropdown-text-low" onclick="hide_dropdown_p1s3() ; selectlow_p1s3()" >set1.low</p> 
+                  <p class="dropdown-text-high" onclick="hide_dropdown_p1s3() ; selecthigh_p1s3()">set2.med</p> 
+                  <p class="dropdown-text-max" onclick="hide_dropdown_p1s3() ; selectmax_p1s3()">set3.max</p>
+                </div>
+              </div>
+              <div class="modal" onmouseover="show_modal_p1s3()" onmouseout="hide_modal_p1s3()">
+                <p class="setminutes_p2 number valign-text-middle" id="time_p1s3" name="time_p1s3">0 MIN</p>
+                <div class="modal-content" id="modal-content_p1s3" name="modal-content_p1s3" >
+                  <div class="up_1" onclick="minutes_up_p1s3()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                  <div class="ok_minutes_div" onclick="hide_modal_p1s3() ; set_minutes_p1s3()" ><p class="ok_minutes" >ok</p> </div>
+                  <div class="down_1" onclick="minutes_down_p1s3()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="set_minutes" id="set_minutes_p1s3" name="set_minutes_p1s3" >1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prog1set4" >
+            <div class="parametersprog1set2">
+              <div class="dropdown"onmouseover="show_dropdown_p1s4()" onmouseout="hide_dropdown_p1s4()">
+                <img class="setup-44" id="img_p1s4" name="img_p1s4" src="img/setup-2.svg" alt="Setup">
+                <div class="dropdown-content-right" id="dropdown-content_p1s4" name="dropdown-content_p1s4">
+                  <p class="dropdown-text-low" onclick="hide_dropdown_p1s4() ; selectlow_p1s4()" >set1.low</p> 
+                  <p class="dropdown-text-high" onclick="hide_dropdown_p1s4() ; selecthigh_p1s4()">set2.med</p>
+                  <p class="dropdown-text-max" onclick="hide_dropdown_p1s4() ; selectmax_p1s4()">set3.max</p>
+                </div>
+              </div>
+              <div class="modal" onmouseover="show_modal_p1s4()" onmouseout="hide_modal_p1s4()">
+                <p class="setminutes_p2 number valign-text-middle" id="time_p1s4" name="time_p1s4">0 MIN</p>
+                <div class="modal-content_right" id="modal-content_p1s4" name="modal-content_p1s4" >
+                  <div class="up_1" onclick="minutes_up_p1s4()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                  <div class="ok_minutes_div" onclick="hide_modal_p1s4() ; set_minutes_p1s4()" ><p class="ok_minutes" >ok</p> </div>
+                  <div class="down_1" onclick="minutes_down_p1s4()">
+                    <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                  </div>
+                  <div class="set_minutes" id="set_minutes_p1s4" name="set_minutes_p1s4" >1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!------------------------------- P R O G R A M   2 -------------------------------------------->
+        
+        <div class="burner" id="program2" name = "program2" >
+          <div class="burner_freez" id="burner_freez" name="burner_freez" >
+            <img class="minus_p1s1" id="minus_p2s1" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s2" id="minus_p2s2" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s3" id="minus_p2s3" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s4" id="minus_p2s4" src="img/rectangle-light.svg"/>
+          </div>
+
+          <div class="progrms" >
+            <div class="progrms1-z1" id="program2_z1" name="program2_z1" >
+              <img class="vector-7"  src="img/vector-1.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" >PROG 2</div>
+            </div>
+
+            <div class="progrms1" onclick="slct_prog2()">
+              <img class="vector-7" id="prog2_svg" name="prog2_svg" src="img/vector-1.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" id="slct_prog2" name="slct_prog2">PROG 2</div>
+            </div>
+            <div class="prog2set1" >
+              <div class="parametersprog2set1">
+                <div class="dropdown"onmouseover="show_dropdown_p2s1()" onmouseout="hide_dropdown_p2s1()">
+                  <img class="setup-44" id="img_p2s1" name="img_p2s1" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content" id="dropdown-content_p2s1" name="dropdown-content_p2s1">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p2s1() ; selectlow_p2s1()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p2s1() ; selecthigh_p2s1()">set2.med</p> 
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p2s1() ; selectmax_p2s1()">set3.max</p>
+                      </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p2s1()" onmouseout="hide_modal_p2s1()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p2s1" name="time_p2s1">0 MIN</p>
+                  <div class="modal-content" id="modal-content_p2s1" name="modal-content_p2s1" >
+                    <div class="up_1" onclick="minutes_up_p2s1()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p2s1() ; set_minutes_p2s1()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p2s1()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p2s1" name="set_minutes_p2s1" >1</div>
+                  </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="prog2set2" >
+              <div class="parametersprog2set2">
+                <div class="dropdown"onmouseover="show_dropdown_p2s2()" onmouseout="hide_dropdown_p2s2()">
+                  <img class="setup-44" id="img_p2s2" name="img_p2s2" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content" id="dropdown-content_p2s2" name="dropdown-content_p2s2">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p2s2() ; selectlow_p2s2()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p2s2() ; selecthigh_p2s2()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p2s2() ; selectmax_p2s2()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p2s2()" onmouseout="hide_modal_p2s2()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p2s2" name="time_p2s2">0 MIN</p>
+                  <div class="modal-content" id="modal-content_p2s2" name="modal-content_p2s2" >
+                    <div class="up_1" onclick="minutes_up_p2s2()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p2s2() ; set_minutes_p2s2()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p2s2()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p2s2" name="set_minutes_p2s2" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <div class="prog2set3" >
+              <div class="parametersprog2set2">
+                <div class="dropdown"onmouseover="show_dropdown_p2s3()" onmouseout="hide_dropdown_p2s3()">
+                  <img class="setup-44" id="img_p2s3" name="img_p2s3" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content" id="dropdown-content_p2s3" name="dropdown-content_p2s3">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p2s3() ; selectlow_p2s3()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p2s3() ; selecthigh_p2s3()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p2s3() ; selectmax_p2s3()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p2s3()" onmouseout="hide_modal_p2s3()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p2s3" name="time_p2s3">0 MIN</p>
+                  <div class="modal-content" id="modal-content_p2s3" name="modal-content_p2s3" >
+                    <div class="up_1" onclick="minutes_up_p2s3()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p2s3() ; set_minutes_p2s3()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p2s3()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p2s3" name="set_minutes_p2s3" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <div class="prog2set4" >
+              <div class="parametersprog2set2">
+                <div class="dropdown"onmouseover="show_dropdown_p2s4()" onmouseout="hide_dropdown_p2s4()">
+                  <img class="setup-44" id="img_p2s4" name="img_p2s4" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content-right" id="dropdown-content_p2s4" name="dropdown-content_p2s4">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p2s4() ; selectlow_p2s4()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p2s4() ; selecthigh_p2s4()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p2s4() ; selectmax_p2s4()">set3.max</p>
+                    </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p2s4()" onmouseout="hide_modal_p2s4()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p2s4" name="time_p2s4">0 MIN</p>
+                  <div class="modal-content_right" id="modal-content_p2s4" name="modal-content_p2s4" >
+                    <div class="up_1" onclick="minutes_up_p2s4()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p2s4() ; set_minutes_p2s4()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p2s4()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p2s4" name="set_minutes_p2s4" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+  
+          </div>
+        </div>
+
+  <!------------------------------- P R O G R A M   3 -------------------------------------------->
+
+        <div class="fan" id="program3" name = "program3" >
+          <div class="fan_freez" id="fan_freez2" name="fan_freez2" >
+            <img class="minus_p1s1" id="minus_p3s1" src="img/rectangle-light.svg">
+            <img class="minus_p1s2" id="minus_p3s2" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s3" id="minus_p3s3" src="img/rectangle-light.svg"/>
+            <img class="minus_p1s4" id="minus_p3s4" src="img/rectangle-light.svg"/>
+          </div>
+
+          <div class="progrms" >
+            <div class="progrms1-z1" id="program3_z1" name="program3_z1">
+              <img class="vector-7"  src="img/vector-1.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" >PROG 3</div>
+            </div>
+
+            <div class="progrms1" onclick="slct_prog3()">
+              <img class="vector-7" id="prog3_svg" name="prog3_svg" src="img/vector-1.svg" alt="Vector">
+              <div class="text-program oswald-bold-mine-shaft-24px" id="slct_prog3" name="slct_prog3">PROG 3</div>
+            </div>
+            <div class="prog3set1" >
+              <div class="parametersprog3set1">
+                <div class="dropdown"onmouseover="show_dropdown_p3s1()" onmouseout="hide_dropdown_p3s1()">
+                  <img class="setup-44" id="img_p3s1" name="img_p3s1" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content-up" id="dropdown-content_p3s1" name="dropdown-content_p3s1">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p3s1() ; selectlow_p3s1()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p3s1() ; selecthigh_p3s1()">set2.med</p> 
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p3s1() ; selectmax_p3s1()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p3s1()" onmouseout="hide_modal_p3s1()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p3s1" name="time_p3s1">0 MIN</p>
+                  <div class="modal-content_up" id="modal-content_p3s1" name="modal-content_p3s1" >
+                    <div class="up_1" onclick="minutes_up_p3s1()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p3s1() ; set_minutes_p3s1()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p3s1() ">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p3s1" name="set_minutes_p3s1" >1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog3set2" >
+              <div class="parametersprog3set2">
+                <div class="dropdown"onmouseover="show_dropdown_p3s2()" onmouseout="hide_dropdown_p3s2()">
+                  <img class="setup-44" id="img_p3s2" name="img_p3s2" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content-up" id="dropdown-content_p3s2" name="dropdown-content_p3s2">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p3s2() ; selectlow_p3s2()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p3s2() ; selecthigh_p3s2()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p3s2() ; selectmax_p3s2()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p3s2()" onmouseout="hide_modal_p3s2()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p3s2" name="time_p3s2">0 MIN</p>
+                  <div class="modal-content_up" id="modal-content_p3s2" name="modal-content_p3s2" >
+                    <div class="up_1" onclick="minutes_up_p3s2()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p3s2() ; set_minutes_p3s2()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p3s2()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p3s2" name="set_minutes_p3s2" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <div class="prog3set3" >
+              <div class="parametersprog3set2">
+                <div class="dropdown"onmouseover="show_dropdown_p3s3()" onmouseout="hide_dropdown_p3s3()">
+                  <img class="setup-44" id="img_p3s3" name="img_p3s3" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content-up" id="dropdown-content_p3s3" name="dropdown-content_p3s3">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p3s3() ; selectlow_p3s3()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p3s3() ; selecthigh_p3s3()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p3s3() ; selectmax_p3s3()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p3s3()" onmouseout="hide_modal_p3s3()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p3s3" name="time_p3s3">0 MIN</p>
+                  <div class="modal-content_up" id="modal-content_p3s3" name="modal-content_p3s3" >
+                    <div class="up_1" onclick="minutes_up_p3s3()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p3s3() ; set_minutes_p3s3()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p3s3()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p3s3" name="set_minutes_p3s3" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <div class="prog3set4" >
+              <div class="parametersprog3set2">
+                <div class="dropdown"onmouseover="show_dropdown_p3s4()" onmouseout="hide_dropdown_p3s4()">
+                  <img class="setup-44" id="img_p3s4" name="img_p3s4" src="img/setup-2.svg" alt="Setup">
+                  <div class="dropdown-content-up-right" id="dropdown-content_p3s4" name="dropdown-content_p3s4">
+                    <p class="dropdown-text-low" onclick="hide_dropdown_p3s4() ; selectlow_p3s4()" >set1.low</p> 
+                    <p class="dropdown-text-high" onclick="hide_dropdown_p3s4() ; selecthigh_p3s4()">set2.med</p>
+                    <p class="dropdown-text-max" onclick="hide_dropdown_p3s4() ; selectmax_p3s4()">set3.max</p>
+                  </div>
+                </div>  
+                <div class="modal" onmouseover="show_modal_p3s4()" onmouseout="hide_modal_p3s4()">
+                  <p class="setminutes_p2 number valign-text-middle" id="time_p3s4" name="time_p3s4">0 MIN</p>
+                  <div class="modal-content_up_right" id="modal-content_p3s4" name="modal-content_p3s4" >
+                    <div class="up_1" onclick="minutes_up_p3s4()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="modal_minutes_div"> <p class="modal_minutes" >min</p> </div>
+                    <div class="ok_minutes_div" onclick="hide_modal_p3s4() ; set_minutes_p3s4()" ><p class="ok_minutes" >ok</p> </div>
+                    <div class="down_1" onclick="minutes_down_p3s4()">
+                      <img class="material-symbolsarro_1" src="img/material-symbols-arrow-back-ios-new-rounded-1.svg" alt="material-symbols:arrow-back-ios-new-rounded">
+                    </div>
+                    <div class="set_minutes" id="set_minutes_p3s4" name="set_minutes_p3s4" >1</div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  
+</html>
