@@ -1,5 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Oswald:wght@700&family=Playfair+Display&display=swap');
+
+@font-face {
+font-family: 'font1';
+src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
+    /*   url("../fonts/Oswald-new.woff") format('.woff');
+        url("../../application/web/fonts/Oswald.ttf")  format('truetype'),
+        url(.local/share/fonts/Oswald.ttf) format('truetype'),*/
+        url('dash.otf') ;
+}
 .content {
     width: 100vw;
     height: 100vh;
-    background-color: aqua;
+    background-color: #010101;
 }
+
+.left {
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.photo {
+    width: 70vw;
+    height: 70vh;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    font-size: 20px;
+    color:cadetblue;
+    font-family: 'font1';
+}
+
