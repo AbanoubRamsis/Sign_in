@@ -13,6 +13,8 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
     width: 100vw;
     height: 100vh;
     background-color: #010101;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .left {
@@ -33,9 +35,28 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
 .logo {
     position: absolute;
     z-index: 1;
-    top: 20%;
-    font-size: 20px;
-    color:cadetblue;
+    top: 15%;
+    font-size: 40px;
+    color:rgb(255, 255, 255);
     font-family: 'font1';
 }
 
+.right {
+    width: 60%;
+    position: relative;
+    top: 25%;
+    height: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content:space-between;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row {
+    width: 100vw;
+    height: 30%;
+    overflow: hidden;
+    background-color: blue;
+}
