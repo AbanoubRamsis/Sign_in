@@ -30,16 +30,35 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
 .photo {
     width: 70vw;
     height: 70vh;
+    opacity:1.0;
+    animation-name: fade_in;
+    animation-duration: 4s;
+}
+
+@keyframes fade_in {
+    0%   {opacity:0.0; transform: translateX(-20px); }
+    100% {opacity:1.0; transform: translateX(0); }
 }
 
 .logo {
     position: absolute;
     z-index: 1;
+    opacity: 1;
     top: 15%;
     font-size: 40px;
     color:rgb(255, 255, 255);
     font-family: 'font1';
+    animation-name: fade_logo;
+    animation-duration: 5s;
 }
+
+@keyframes fade_logo {
+    0%   {opacity:0.0;  }
+    40%  {opacity:0.0;  }
+    100% {opacity:1.0; }
+}
+
+
 
 .right {
     width: 60%;
