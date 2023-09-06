@@ -36,7 +36,7 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
 }
 
 @keyframes fade_in {
-    0%   {opacity:0.0; transform: translateX(-20px); }
+    0%   {opacity:0.0; transform: translateX(20px); }
     100% {opacity:1.0; transform: translateX(0); }
 }
 
