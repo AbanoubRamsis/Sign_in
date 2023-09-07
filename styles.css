@@ -28,6 +28,7 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
     flex-shrink: 0;
 }
 
+
 .photo {
     max-width: 100%;
     height: auto;
