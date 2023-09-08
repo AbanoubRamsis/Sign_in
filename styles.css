@@ -17,6 +17,67 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
     justify-content: flex-start;
 }
 
+.header {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content:space-between;
+    justify-items: center;
+    align-items: center;
+    height: 30px;
+    width: 900px;
+    top: 10px;
+    left: 400px;
+}
+
+.pages {
+    position: relative;
+    background-color: transparent;
+    height: 30px;
+    width:100px;
+    display:block;
+    justify-content:center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    border-style: solid;
+    top: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border-style: solid;
+    border-width: 0px;
+    border-color: transparent;
+    
+}
+
+.pagename {
+    position: relative;
+    font-size: 15px;
+    height:100%;
+    color:rgb(255, 255, 255);
+    font-family: 'font1';
+    background-color: transparent;
+    top: -16px;
+    left: 25px;
+    text-decoration: none;
+}
+
+.pages:hover {
+    animation-name: fade_pages;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    
+
+}
+
+@keyframes fade_pages {
+    100% {
+        border-bottom: 0.5px;
+        border-color: aliceblue;
+        }
+}
+
 .left {
     width: 40%;
     height: 100vh;
@@ -158,3 +219,30 @@ src: /*url("../../usr/share/fonts/truetype/Oswald-new.woff") format('.woff');*/
     transition: width 0.4s ease-in-out;
 }
 
+.pazienza {
+    width: 100%;
+    position: relative;
+    top: 10%;
+    height: 70%;
+
+    display: block;
+    background-color: transparent;
+    flex-shrink: 0;
+}
+
+.coming {
+    position: relative;
+    left: 550px;
+    font-size: 40px;
+    color:rgb(255, 255, 255);
+    font-family: 'font1';
+}
+
+.sabr {
+    position: relative;
+    left: 350px;
+    top: 0px;
+    font-size: 40px;
+    color:rgb(255, 255, 255);
+    font-family: 'font1';
+}
